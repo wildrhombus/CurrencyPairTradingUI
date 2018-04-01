@@ -1,0 +1,72 @@
+#app {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #1A1A1A;
+}
+
+.error {
+  color: red;
+}
+
+h1 {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 12px;
+  margin: 0;
+}
+
+input {
+  border: 1px solid #1A1A1A;
+  background-color: #F6F6F6;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+input, .trade--section-form-label {
+  padding: 10px 22px;
+  font-size: 14px;
+  color: #101010;
+}
+
+button {
+  background-color: #101082;
+  width: 100%;
+  padding: 20px 0;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #1B1BDD;
+}
+
+.trade {
+  position: relative;
+  width: 248px;
+  padding: 0 40px 50px;
+  background-color: #F6F6F6;
+  margin: 0 auto;
+}
+
+.trade label {
+  font-size: 16px;
+  color: #101010;
+  padding-right: 14px;
+}
+
+.trade--section {
+  width: 234px;
+  margin: 0 auto;
+  padding-bottom: 8px;
+}
+
+.trade--section-balance {
+  padding: 8px 20px;
+}
+
+.trade--section-form-label {
+  border: 1px solid #969696;
+  margin-bottom: 22px;
+}
