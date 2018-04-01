@@ -104,6 +104,7 @@ class App extends React.Component {
         btc={this.state.trade.btc}
         balance={this.state.balance.usd}
         loading={this.props.loading}
+        servererror={this.props.servererror}
         onSubmit={this.submit} onChange={this.updateBTC}/>
       </div>
     )
@@ -111,9 +112,15 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
+  let servererror = '';
+  if (Object.keys(state.priceStore.errors).length != 0) {
+    servererror = 'Network Error: Unable to get quote';
+  }
+
   return {
     price: state.priceStore.price,
-    loading: state.priceStore.loading
+    loading: state.priceStore.loading,
+    servererror: servererror
   }
 }
 export default connect(mapStateToProps, {fetchPrice})(App);

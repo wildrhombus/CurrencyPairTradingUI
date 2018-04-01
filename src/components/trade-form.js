@@ -17,6 +17,8 @@ class TradeForm extends Component {
       return('Must be a number');
     } else if ( value > balance ) {
       return(`Max amount ${balance.toFixed(2)} exceeded`);
+    } else if ( value <= 0 ) {
+      return('Must be positive');
     }
   }
 
@@ -31,7 +33,7 @@ class TradeForm extends Component {
   )
 
   render() {
-    const { handleSubmit, onChange, pristine, submitting, loading, invalid, btc } = this.props;
+    const { handleSubmit, onChange, pristine, submitting, loading, servererror, invalid, btc } = this.props;
 
     // Render the form.  Make sure that submit is disabled if the input is invalid
     // Or the quote is in the middle of fetching a new value.
@@ -47,6 +49,7 @@ class TradeForm extends Component {
             <div className="trade--section-form-label">BTC</div>
             <input readOnly placeholder="Display Quote" type="text" value={this.props.btc}/>
           </div>
+          {servererror && <div className="error">{servererror}</div>}
 
           <button primary="true" type="submit" disabled={loading || invalid || pristine || submitting}>Trade</button>
         </form>
