@@ -8,6 +8,7 @@ import debounce from 'debounce';
 import { fetchPrice } from './actions/price-actions';
 import TradeForm from './components/trade-form';
 
+
 // The Page component to control the trade form
 class App extends React.Component {
   constructor(props) {
@@ -77,7 +78,7 @@ class App extends React.Component {
   // rate error on the api.
   updateBTC = debounce((value) => {
     let usdf = parseFloat(value.usd);
-    if (usdf.toString() === value.usd) {
+    if (!isNaN(value.usd) && usdf <= this.state.balance.usd) {
       this.setState(this.newTradeState(usdf, parseFloat(this.props.price)));
       this.props.fetchPrice();
     }
