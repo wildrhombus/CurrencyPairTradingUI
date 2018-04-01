@@ -57,7 +57,7 @@ describe("Currency Price App tests", () => {
     // Set the page initial state
     tradePage.setState({
       balance: {
-        usd: 152.12,
+        usd: 156.12,
         btc: 0.000000000,
       },
       trade: {
@@ -76,7 +76,7 @@ describe("Currency Price App tests", () => {
   it('should initialize balance', () => {
     const balance = tradePage.find('NumberFormat');
 
-    expect(balance.at(0).props().value).to.equal('152.12');
+    expect(balance.at(0).props().value).to.equal('156.12');
     expect(balance.at(1).props().value).to.equal('0.000000000');
   });
 
@@ -87,7 +87,7 @@ describe("Currency Price App tests", () => {
 
     const balance = tradePage.find('NumberFormat');
 
-    expect(balance.at(0).props().value).to.equal('139.89');
+    expect(balance.at(0).props().value).to.equal('143.89');
     expect(balance.at(1).props().value).to.equal('0.001528750');
   });
 
@@ -109,7 +109,7 @@ describe("Currency Price App tests", () => {
 
     const balance = tradePage.find('NumberFormat');
 
-    expect(balance.at(0).props().value).to.equal('39.39');
+    expect(balance.at(0).props().value).to.equal('43.39');
     expect(balance.at(1).props().value).to.equal('0.002785000');
   });
 

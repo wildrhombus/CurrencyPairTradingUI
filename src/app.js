@@ -17,7 +17,7 @@ class App extends React.Component {
     // Todo:  put the initial balance in a config file
     this.state = {
       balance: {
-        usd: 152.12,
+        usd: 156.12,
         btc: 0.000000000,
       },
       trade: {
@@ -31,7 +31,7 @@ class App extends React.Component {
     this.props.fetchPrice();
     this.setState({
       balance: {
-        usd: 152.12,
+        usd: 156.12,
         btc: 0.000000000,
       },
       trade: {
